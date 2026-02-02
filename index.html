@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator rat kredytowych</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Kalkulator rat kredytowych</h1>
+        <form id="loan-form">            <label for="amount">Kwota kredytu:</label>
+            <input type="number" id="amount" name="amount" step="0.01" min="0" required>
+
+            <label for="interest">Oprocentowanie roczne (%):</label>
+            <input type="number" id="interest" name="interest" step="0.01" required>            <label for="payments">Liczba rat:</label>
+            <input type="number" id="payments" name="payments" min="1" required>            <div class="radio-group">
+                <label>Typ rat:</label>
+                <div class="radio-options">
+                    <label for="equal-payment"><input type="radio" id="equal-payment" name="payment-type" value="equal" checked> Raty równe</label>
+                    <label for="decreasing-payment"><input type="radio" id="decreasing-payment" name="payment-type" value="decreasing"> Raty malejące</label>
+                </div>
+            </div>
+
+            <label for="overpayment">Kwota nadpłaty (opcjonalnie):</label>
+            <input type="number" id="overpayment" name="overpayment" value="500" min="0" step="0.01">
+
+            <div class="form-buttons">
+                <button type="submit">Oblicz ratę</button>
+                <button type="button" id="share-btn">Udostępnij</button>
+            </div>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script type="module" src="main.js"></script>
+    <footer class="footer-no-cookies">
+        Ta strona nie korzysta z plików cookies oraz nie jest ofertą handlową.<br>Służy tylko do symulacji rat kredytowych i nie stanowi porady finansowej. <br>Wszelkie obliczenia mają charakter informacyjny i mogą się różnić od rzeczywistych warunków ofert bankowych.
+    </footer>
+</body>
+</html>
